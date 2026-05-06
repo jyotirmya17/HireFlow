@@ -1,48 +1,75 @@
-# HireFlow: The Autonomous Technical Interviewer
+# HireFlow: The Future of Autonomous Technical Recruitment
 
 ![HireFlow Hero](public/screenshots/landing.png)
 
-HireFlow is an advanced, AI-driven interview platform designed to conduct high-fidelity, voice-first technical screenings. It leverages state-of-the-art inference speeds and sophisticated LLM orchestration to provide a professional, seamless experience that mimics a senior technical lead.
+> [!IMPORTANT]
+> HireFlow is an advanced AI interview platform that replaces slow, inconsistent preliminary screenings with high-fidelity, voice-first autonomous assessments.
 
-## 🌟 Vision & Impact
+## 🌟 The Vision
 
-In a world where recruitment bottlenecks delay innovation, HireFlow serves as the first line of technical assessment. By automating the preliminary screening process with a "State-Aware" AI agent, we allow human recruiters to focus on high-potential candidates while ensuring every applicant receives a fair, consistent, and deep technical evaluation.
+HireFlow was born out of a simple observation: **Technical recruiting is broken.** Recruiters are overwhelmed, and candidates are frustrated by slow response times. HireFlow bridges this gap by providing "Alex"—a sophisticated AI interviewer that conducts deep technical dives 24/7, delivering objective, data-driven reports instantly.
 
-## 🚀 Key Features
+---
 
-- **Voice-First Experience**: Near-instantaneous STT and TTS pipeline for natural, fluid conversations.
-- **Dynamic 3D Interface**: An interactive, rounded Rubik's cube centerpiece that provides tactile feedback and visual engagement.
-- **State-Machine Logic**: A structured 6-stage interview process (Intro, Experience, Stack, Logic, Behavioral, Closing).
-- **Data-Driven Reports**: Detailed performance breakdowns, competency heatmaps, and sentiment analysis.
-- **Strict Time Management**: Hard 15-minute limits to ensure efficiency and respect for candidate time.
+## 📸 Experience the Interface
 
-## 📸 Interface Preview
+### 🖥️ Cinematic Landing
+![Landing Page](public/screenshots/landing.png)
+*Featuring a premium dark-mode aesthetic with an interactive, rounded 3D Rubik's cube centerpiece representing the complexity and clarity of thought.*
 
-### 1. The Interview Interface
-![Interview Page](public/screenshots/interview.png)
-*A minimalist, focused environment featuring the "Alex" persona and real-time voice activity detection.*
+### 🎙️ The Interview Room
+![Interview Interface](public/screenshots/interview.png)
+*A focused, minimalist environment designed to minimize candidate anxiety while maximizing technical signal. Features real-time Voice Activity Detection (VAD).*
 
-### 2. The Evaluation Report
-![Report Page](public/screenshots/report.png)
-*Deep-dive analysis including category scores, percentile rankings, and hiring recommendations.*
+### 📊 Comprehensive Evaluation
+![Evaluation Dashboard](public/screenshots/report.png)
+*Data-rich reports including weighted competency scores, percentile rankings, and AI-generated hiring recommendations.*
 
-## 🛠️ The Technology Stack
+---
 
-- **Frontend**: [Next.js 16](https://nextjs.org/) (App Router) with [Framer Motion](https://www.framer.com/motion/) and [Three.js](https://threejs.org/).
-- **Inference**: [Groq](https://groq.com/) (Llama-3.3-70b & Whisper-large-v3) for sub-500ms response times.
-- **Voice**: [ElevenLabs](https://elevenlabs.io/) (Aarav - Indian English Professional).
-- **Evaluation**: [Google Gemini 1.5 Pro](https://ai.google.dev/) for high-context transcript analysis.
-- **Persistence**: [Supabase](https://supabase.com/) (PostgreSQL) for secure session storage.
+## ⚙️ How it Works (System Architecture)
 
-## 🧠 Architectural Decisions
+HireFlow utilizes a unique **HTTP-Burst Architecture** to achieve sub-500ms latency without the overhead of persistent WebRTC rooms.
 
-### Why we moved away from WebRTC (Livekit)
-While Livekit is excellent for multi-user real-time rooms, technical interviews are inherently turn-based. We opted for a **High-Speed HTTP-Burst Architecture**. This approach:
-- **Reduces Latency**: Bypassing signaling servers for direct inference calls.
-- **Optimizes Cost**: You only pay for active processing, not persistent room uptime.
-- **Enhances Reliability**: More resilient to minor network fluctuations common on mobile 4G/5G.
+```mermaid
+sequenceDiagram
+    participant C as Candidate
+    participant B as Browser (VAD)
+    participant G as Groq (STT/LLM)
+    participant E as ElevenLabs (TTS)
+    participant S as Supabase (DB)
 
-## ⚡ Setup & Installation
+    C->>B: Speaks
+    B->>G: Sends Audio Blob (Whisper-v3)
+    G->>G: Transcribes & Reasons (Llama-3.3)
+    G->>E: Sends Text to Synthesize
+    E->>B: Streams Audio Back
+    B->>C: Alex Speaks
+    B->>S: Persists Transcript & Stage
+```
+
+### 🧠 The "Alex" State Machine
+Alex is not a simple chatbot; it is a **State-Aware Interviewer** that manages a structured 6-stage lifecycle:
+1. **Introduction**: Rapport building and logistics.
+2. **Academic Foundation**: Validating background.
+3. **Technical Stack**: Deep-dive into specific tools and self-ratings.
+4. **Problem Solving**: Probing architectural and logical thinking.
+5. **Behavioral**: Assessing situational and cultural fit.
+6. **Closing**: Seamless handover to the evaluation engine.
+
+---
+
+## 🛠️ The Powerhouse Tech Stack
+
+- **Frontend Core**: [Next.js 16](https://nextjs.org/) (App Router) + [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+- **High-Speed Inference**: [Groq](https://groq.com/) using **Llama-3.3-70b** for reasoning and **Whisper-large-v3** for transcription.
+- **Vocal Fidelity**: [ElevenLabs](https://elevenlabs.io/) with the **Aarav** persona for professional Indian English prosody.
+- **Deep Intelligence**: [Google Gemini 1.5 Pro](https://ai.google.dev/) for high-context evaluation logic.
+- **Data Persistence**: [Supabase](https://supabase.com/) (PostgreSQL) for secure, real-time data storage.
+
+---
+
+## ⚡ Quick Start
 
 1. **Clone & Install**:
    ```bash
@@ -52,26 +79,25 @@ While Livekit is excellent for multi-user real-time rooms, technical interviews 
    ```
 
 2. **Environment Configuration**:
-   Copy the example environment file and fill in your API keys:
    ```bash
    cp .env.example .env.local
    ```
-   *See [.env.example](.env.example) for the list of required variables.*
+   > [!TIP]
+   > Ensure you have valid keys for Groq, Gemini, and ElevenLabs to experience the low-latency voice pipeline.
 
-3. **Database Setup**:
-   Initialize your Supabase tables (Sessions, Transcripts, Evaluations) as defined in the technical report.
-
-4. **Launch**:
+3. **Launch the Engine**:
    ```bash
    npm run dev
    ```
 
+---
+
 ## 🏗️ Future Roadmap
 
-- **Multi-modal Support**: Real-time eye-tracking and confidence analysis via camera.
-- **Shared Coding Sandbox**: A live IDE where Alex can watch and discuss code in real-time.
-- **Enterprise RAG**: Allowing Alex to ingest specific company JDs and internal technical standards for hyper-relevant interviewing.
+*   **[ ] Multi-modal Intelligence**: Real-time webcam analysis for eye-contact and sentiment scoring.
+*   **[ ] Live Coding IDE**: A shared sandbox where Alex discusses code in real-time.
+*   **[ ] Enterprise RAG**: Ingesting company-specific standards and JDs for hyper-relevant interviewing.
 
 ---
 
-*Engineered with precision for the future of hiring.*
+*Engineered with precision for the next generation of professional hiring.*
