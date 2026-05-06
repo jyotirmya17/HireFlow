@@ -1,0 +1,519 @@
+[
+  {
+    "id": 1777990560247,
+    "timestamp": "2026-05-05T14:16:00.247Z",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Hello... welcome to HireFlow. I'm Adam. To start, could you introduce yourself and your current role?"
+      }
+    ],
+    "responses": [],
+    "evaluation": {
+      "score": 20,
+      "recommendation": "Pass",
+      "summary": "The candidate has not provided any information yet, so it's difficult to assess their qualifications. The introduction stage is crucial in setting the tone for the rest of the interview. More information is needed to evaluate the candidate's performance.",
+      "strengths": [],
+      "weaknesses": [
+        "Lack of provided information"
+      ],
+      "stages": [
+        {
+          "name": "Introduction",
+          "feedback": "The candidate was not given the opportunity to respond, so no assessment can be made at this time."
+        }
+      ]
+    }
+  },
+  {
+    "id": 1777990560280,
+    "timestamp": "2026-05-05T14:16:00.280Z",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Hello... welcome to HireFlow. I'm Adam. To start, could you introduce yourself and your current role?"
+      }
+    ],
+    "responses": [],
+    "evaluation": {
+      "score": 20,
+      "recommendation": "Pass",
+      "summary": "The candidate has not provided any information yet, so it's difficult to assess their qualifications. The introduction stage is crucial in setting the tone for the rest of the interview. More information is needed to evaluate the candidate's performance.",
+      "strengths": [],
+      "weaknesses": [
+        "Lack of provided information"
+      ],
+      "stages": [
+        {
+          "name": "Introduction",
+          "feedback": "The candidate was supposed to introduce themselves and their current role, but the transcript does not contain their response, making it impossible to evaluate their performance in this stage."
+        }
+      ]
+    }
+  },
+  {
+    "id": 1778004589385,
+    "timestamp": "2026-05-05T18:09:49.385Z",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Hello... welcome to HireFlow. I'm Adam. To start, could you introduce yourself and your current role?"
+      },
+      {
+        "role": "user",
+        "content": " yes my name is Jyotirme Sharma and I'm from Jaipur and I'm a full-stack developer right now"
+      },
+      {
+        "role": "assistant",
+        "content": "That's a start... what inspired you to become a full-stack developer?"
+      },
+      {
+        "role": "user",
+        "content": " I was curious about building things and full-size development is something where I can bring up the solutions and can integrate AI and a lot of technologies with it."
+      },
+      {
+        "role": "assistant",
+        "content": "Interesting... how do you stay updated with the latest tech trends?"
+      },
+      {
+        "role": "user",
+        "content": " so I use some tech channels and I'm continuously read you know different different articles and I have this weekly scheduled mail thingy where I have the most updated things are coming in the market that I can learn about them and you know I can be more into tech and be relevant in the industry you"
+      },
+      {
+        "role": "assistant",
+        "content": "Sounds like a plan... what's the most exciting project you've worked on so far?"
+      },
+      {
+        "role": "user",
+        "content": " I have worked on FinCite which is basically like tracking your expenses through UPA and categorizing them into different categories which is like you know medicals, medicines and then traveling and food and other categories. So that at the end of the month you can have the tracking of your transactions through UPA app and you can manage your finances with it. Thank you."
+      },
+      {
+        "role": "assistant",
+        "content": "That's useful... how did you handle user data security in that project?"
+      },
+      {
+        "role": "user",
+        "content": " so I used back in as in MongoDB and it's the most and post grass or is a school which is the most safest option out there in the market so I think by that way I can keep it safe and have some passwords integrated on my account so I just keep them safe"
+      },
+      {
+        "role": "assistant",
+        "content": "Good approach... what measures did you take to prevent data breaches?"
+      },
+      {
+        "role": "user",
+        "content": " I don't know about them and I didn't apply them to my project"
+      },
+      {
+        "role": "assistant",
+        "content": "Let's move on... what were some challenges you faced during development?"
+      },
+      {
+        "role": "user",
+        "content": " it was applying logistic regression as my ML technique and TFIDF which we use in ML so it was the most difficult part and is as it is the core of my project"
+      },
+      {
+        "role": "assistant",
+        "content": "Tough spot... how did you optimize your model's performance?"
+      },
+      {
+        "role": "user",
+        "content": " I did it by having a lot of data set of natural data set real time data set of different apps so I used around 5000 rows and I trained my model on the data set and I came up with the accuracy of around 92% which is so far great for the project as there are some conditions which can't be solved right now so we'll just get over them later"
+      },
+      {
+        "role": "assistant",
+        "content": "That's a good start... what's the next step to improve that 92% accuracy?"
+      },
+      {
+        "role": "user",
+        "content": " No, that's good enough and I don't think so that I have to move forward to increase in any 2% accuracy as it can be only increased when vendors and other people who are using UPI payment can really name their and categorize themselves into different categories. Like if someone is selling fruits and he should name his account like Ram fruit seller only then it can be solved otherwise 92% is pretty much good and is the best case out there in the market. Thank you."
+      },
+      {
+        "role": "assistant",
+        "content": "Limitations are clear... what about handling false positives?"
+      },
+      {
+        "role": "user",
+        "content": " no I don't think so they are much false positives I did train my data and I didn't found many false positives yeah it was great nothing as such far and problem"
+      },
+      {
+        "role": "assistant",
+        "content": "False positives seem minimal... how does the model handle new vendors?"
+      },
+      {
+        "role": "user",
+        "content": " so it just you know they are it's a less percentage I think for 10 or 15 percent of the data is of new vendors so just categorizing them into miscellaneous and yeah that's on the issue that's something what my model does"
+      },
+      {
+        "role": "assistant",
+        "content": "Miscellaneous category... is it manually updated?"
+      },
+      {
+        "role": "user",
+        "content": " now I trained my model in such a way that it categorizes them into miscellaneous"
+      },
+      {
+        "role": "assistant",
+        "content": "Automated categorization... what's the next improvement step?"
+      },
+      {
+        "role": "user",
+        "content": " to use Burt's theorem and so that I can have much faster efficient ML model that's it"
+      },
+      {
+        "role": "assistant",
+        "content": "Burt's theorem application... how does it reduce complexity?"
+      },
+      {
+        "role": "user",
+        "content": " By making the model more efficient and trending the model on the data set already available in a much faster way as it uses some formulas which are better than the logistic regression."
+      },
+      {
+        "role": "assistant",
+        "content": "Faster training times... what's the expected accuracy gain?"
+      },
+      {
+        "role": "user",
+        "content": " 2.5%"
+      },
+      {
+        "role": "assistant",
+        "content": "Small improvement... how will you handle overfitting?"
+      },
+      {
+        "role": "user",
+        "content": " no there's no such all fitting over the weather trend my data as my trend my model in system that it doesn't all fit the data set and it is efficient enough you know the sweet spot which is called India India minutes yeah it's fucking fine"
+      },
+      {
+        "role": "assistant",
+        "content": "Moving forward... what's the plan for deployment?"
+      },
+      {
+        "role": "user",
+        "content": " since it's my project so I'll run it locally and if I get you know much finances and financially I get strong then I think I can deploy it over the internet and can be used by people around the globe"
+      },
+      {
+        "role": "assistant",
+        "content": "Expansion plans... how will you handle scalability?"
+      },
+      {
+        "role": "user",
+        "content": " by buying out more efficient and better databases security and front-end development"
+      },
+      {
+        "role": "assistant",
+        "content": "Improving infrastructure... what's the estimated budget?"
+      },
+      {
+        "role": "user",
+        "content": " yes first and deployed over the internet it is like 10 to 15 thousand rupees in India"
+      },
+      {
+        "role": "assistant",
+        "content": "Initial costs... how will you generate revenue?"
+      },
+      {
+        "role": "user",
+        "content": " no I don't have no plans to generate revenue from it"
+      },
+      {
+        "role": "assistant",
+        "content": "No revenue goals... what's the primary purpose then?"
+      },
+      {
+        "role": "user",
+        "content": " I am a full set developer and I just want to develop things so yeah that's my primary goal only"
+      },
+      {
+        "role": "assistant",
+        "content": "Development focus... what technologies are you using?"
+      }
+    ],
+    "responses": [
+      " yes my name is Jyotirme Sharma and I'm from Jaipur and I'm a full-stack developer right now",
+      " I was curious about building things and full-size development is something where I can bring up the solutions and can integrate AI and a lot of technologies with it.",
+      " so I use some tech channels and I'm continuously read you know different different articles and I have this weekly scheduled mail thingy where I have the most updated things are coming in the market that I can learn about them and you know I can be more into tech and be relevant in the industry you",
+      " I have worked on FinCite which is basically like tracking your expenses through UPA and categorizing them into different categories which is like you know medicals, medicines and then traveling and food and other categories. So that at the end of the month you can have the tracking of your transactions through UPA app and you can manage your finances with it. Thank you.",
+      " so I used back in as in MongoDB and it's the most and post grass or is a school which is the most safest option out there in the market so I think by that way I can keep it safe and have some passwords integrated on my account so I just keep them safe",
+      " I don't know about them and I didn't apply them to my project",
+      " it was applying logistic regression as my ML technique and TFIDF which we use in ML so it was the most difficult part and is as it is the core of my project",
+      " I did it by having a lot of data set of natural data set real time data set of different apps so I used around 5000 rows and I trained my model on the data set and I came up with the accuracy of around 92% which is so far great for the project as there are some conditions which can't be solved right now so we'll just get over them later",
+      " No, that's good enough and I don't think so that I have to move forward to increase in any 2% accuracy as it can be only increased when vendors and other people who are using UPI payment can really name their and categorize themselves into different categories. Like if someone is selling fruits and he should name his account like Ram fruit seller only then it can be solved otherwise 92% is pretty much good and is the best case out there in the market. Thank you.",
+      " no I don't think so they are much false positives I did train my data and I didn't found many false positives yeah it was great nothing as such far and problem",
+      " so it just you know they are it's a less percentage I think for 10 or 15 percent of the data is of new vendors so just categorizing them into miscellaneous and yeah that's on the issue that's something what my model does",
+      " now I trained my model in such a way that it categorizes them into miscellaneous",
+      " to use Burt's theorem and so that I can have much faster efficient ML model that's it",
+      " By making the model more efficient and trending the model on the data set already available in a much faster way as it uses some formulas which are better than the logistic regression.",
+      " 2.5%",
+      " no there's no such all fitting over the weather trend my data as my trend my model in system that it doesn't all fit the data set and it is efficient enough you know the sweet spot which is called India India minutes yeah it's fucking fine",
+      " since it's my project so I'll run it locally and if I get you know much finances and financially I get strong then I think I can deploy it over the internet and can be used by people around the globe",
+      " by buying out more efficient and better databases security and front-end development",
+      " yes first and deployed over the internet it is like 10 to 15 thousand rupees in India",
+      " no I don't have no plans to generate revenue from it",
+      " I am a full set developer and I just want to develop things so yeah that's my primary goal only"
+    ],
+    "evaluation": {
+      "score": 40,
+      "recommendation": "Pass",
+      "summary": "The candidate, Jyotirme Sharma, demonstrated some knowledge of full-stack development and machine learning, but lacked depth and clarity in their responses. They struggled to provide detailed explanations of their project and its technical aspects. Overall, their performance was mediocre, and they did not demonstrate the skills and expertise expected of a full-stack developer.",
+      "strengths": [
+        "Some knowledge of machine learning techniques",
+        "Familiarity with MongoDB and data security"
+      ],
+      "weaknesses": [
+        "Lack of clarity and depth in responses",
+        "Inability to provide detailed explanations of technical concepts",
+        "Limited knowledge of data breaches and security measures",
+        "Overconfidence in their model's performance"
+      ],
+      "stages": [
+        {
+          "name": "Introduction",
+          "feedback": "The candidate provided a brief introduction, but it lacked professionalism and clarity."
+        },
+        {
+          "name": "Project Explanation",
+          "feedback": "The candidate struggled to provide a clear and concise explanation of their project, FinCite, and its technical aspects."
+        },
+        {
+          "name": "Technical Questions",
+          "feedback": "The candidate demonstrated some knowledge of machine learning techniques, but their responses were often vague and lacked depth."
+        },
+        {
+          "name": "Deployment and Scalability",
+          "feedback": "The candidate's plan for deployment and scalability was unclear, and they lacked a clear understanding of the costs and challenges involved."
+        }
+      ]
+    }
+  },
+  {
+    "id": 1778004589404,
+    "timestamp": "2026-05-05T18:09:49.405Z",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Hello... welcome to HireFlow. I'm Adam. To start, could you introduce yourself and your current role?"
+      },
+      {
+        "role": "user",
+        "content": " yes my name is Jyotirme Sharma and I'm from Jaipur and I'm a full-stack developer right now"
+      },
+      {
+        "role": "assistant",
+        "content": "That's a start... what inspired you to become a full-stack developer?"
+      },
+      {
+        "role": "user",
+        "content": " I was curious about building things and full-size development is something where I can bring up the solutions and can integrate AI and a lot of technologies with it."
+      },
+      {
+        "role": "assistant",
+        "content": "Interesting... how do you stay updated with the latest tech trends?"
+      },
+      {
+        "role": "user",
+        "content": " so I use some tech channels and I'm continuously read you know different different articles and I have this weekly scheduled mail thingy where I have the most updated things are coming in the market that I can learn about them and you know I can be more into tech and be relevant in the industry you"
+      },
+      {
+        "role": "assistant",
+        "content": "Sounds like a plan... what's the most exciting project you've worked on so far?"
+      },
+      {
+        "role": "user",
+        "content": " I have worked on FinCite which is basically like tracking your expenses through UPA and categorizing them into different categories which is like you know medicals, medicines and then traveling and food and other categories. So that at the end of the month you can have the tracking of your transactions through UPA app and you can manage your finances with it. Thank you."
+      },
+      {
+        "role": "assistant",
+        "content": "That's useful... how did you handle user data security in that project?"
+      },
+      {
+        "role": "user",
+        "content": " so I used back in as in MongoDB and it's the most and post grass or is a school which is the most safest option out there in the market so I think by that way I can keep it safe and have some passwords integrated on my account so I just keep them safe"
+      },
+      {
+        "role": "assistant",
+        "content": "Good approach... what measures did you take to prevent data breaches?"
+      },
+      {
+        "role": "user",
+        "content": " I don't know about them and I didn't apply them to my project"
+      },
+      {
+        "role": "assistant",
+        "content": "Let's move on... what were some challenges you faced during development?"
+      },
+      {
+        "role": "user",
+        "content": " it was applying logistic regression as my ML technique and TFIDF which we use in ML so it was the most difficult part and is as it is the core of my project"
+      },
+      {
+        "role": "assistant",
+        "content": "Tough spot... how did you optimize your model's performance?"
+      },
+      {
+        "role": "user",
+        "content": " I did it by having a lot of data set of natural data set real time data set of different apps so I used around 5000 rows and I trained my model on the data set and I came up with the accuracy of around 92% which is so far great for the project as there are some conditions which can't be solved right now so we'll just get over them later"
+      },
+      {
+        "role": "assistant",
+        "content": "That's a good start... what's the next step to improve that 92% accuracy?"
+      },
+      {
+        "role": "user",
+        "content": " No, that's good enough and I don't think so that I have to move forward to increase in any 2% accuracy as it can be only increased when vendors and other people who are using UPI payment can really name their and categorize themselves into different categories. Like if someone is selling fruits and he should name his account like Ram fruit seller only then it can be solved otherwise 92% is pretty much good and is the best case out there in the market. Thank you."
+      },
+      {
+        "role": "assistant",
+        "content": "Limitations are clear... what about handling false positives?"
+      },
+      {
+        "role": "user",
+        "content": " no I don't think so they are much false positives I did train my data and I didn't found many false positives yeah it was great nothing as such far and problem"
+      },
+      {
+        "role": "assistant",
+        "content": "False positives seem minimal... how does the model handle new vendors?"
+      },
+      {
+        "role": "user",
+        "content": " so it just you know they are it's a less percentage I think for 10 or 15 percent of the data is of new vendors so just categorizing them into miscellaneous and yeah that's on the issue that's something what my model does"
+      },
+      {
+        "role": "assistant",
+        "content": "Miscellaneous category... is it manually updated?"
+      },
+      {
+        "role": "user",
+        "content": " now I trained my model in such a way that it categorizes them into miscellaneous"
+      },
+      {
+        "role": "assistant",
+        "content": "Automated categorization... what's the next improvement step?"
+      },
+      {
+        "role": "user",
+        "content": " to use Burt's theorem and so that I can have much faster efficient ML model that's it"
+      },
+      {
+        "role": "assistant",
+        "content": "Burt's theorem application... how does it reduce complexity?"
+      },
+      {
+        "role": "user",
+        "content": " By making the model more efficient and trending the model on the data set already available in a much faster way as it uses some formulas which are better than the logistic regression."
+      },
+      {
+        "role": "assistant",
+        "content": "Faster training times... what's the expected accuracy gain?"
+      },
+      {
+        "role": "user",
+        "content": " 2.5%"
+      },
+      {
+        "role": "assistant",
+        "content": "Small improvement... how will you handle overfitting?"
+      },
+      {
+        "role": "user",
+        "content": " no there's no such all fitting over the weather trend my data as my trend my model in system that it doesn't all fit the data set and it is efficient enough you know the sweet spot which is called India India minutes yeah it's fucking fine"
+      },
+      {
+        "role": "assistant",
+        "content": "Moving forward... what's the plan for deployment?"
+      },
+      {
+        "role": "user",
+        "content": " since it's my project so I'll run it locally and if I get you know much finances and financially I get strong then I think I can deploy it over the internet and can be used by people around the globe"
+      },
+      {
+        "role": "assistant",
+        "content": "Expansion plans... how will you handle scalability?"
+      },
+      {
+        "role": "user",
+        "content": " by buying out more efficient and better databases security and front-end development"
+      },
+      {
+        "role": "assistant",
+        "content": "Improving infrastructure... what's the estimated budget?"
+      },
+      {
+        "role": "user",
+        "content": " yes first and deployed over the internet it is like 10 to 15 thousand rupees in India"
+      },
+      {
+        "role": "assistant",
+        "content": "Initial costs... how will you generate revenue?"
+      },
+      {
+        "role": "user",
+        "content": " no I don't have no plans to generate revenue from it"
+      },
+      {
+        "role": "assistant",
+        "content": "No revenue goals... what's the primary purpose then?"
+      },
+      {
+        "role": "user",
+        "content": " I am a full set developer and I just want to develop things so yeah that's my primary goal only"
+      },
+      {
+        "role": "assistant",
+        "content": "Development focus... what technologies are you using?"
+      }
+    ],
+    "responses": [
+      " yes my name is Jyotirme Sharma and I'm from Jaipur and I'm a full-stack developer right now",
+      " I was curious about building things and full-size development is something where I can bring up the solutions and can integrate AI and a lot of technologies with it.",
+      " so I use some tech channels and I'm continuously read you know different different articles and I have this weekly scheduled mail thingy where I have the most updated things are coming in the market that I can learn about them and you know I can be more into tech and be relevant in the industry you",
+      " I have worked on FinCite which is basically like tracking your expenses through UPA and categorizing them into different categories which is like you know medicals, medicines and then traveling and food and other categories. So that at the end of the month you can have the tracking of your transactions through UPA app and you can manage your finances with it. Thank you.",
+      " so I used back in as in MongoDB and it's the most and post grass or is a school which is the most safest option out there in the market so I think by that way I can keep it safe and have some passwords integrated on my account so I just keep them safe",
+      " I don't know about them and I didn't apply them to my project",
+      " it was applying logistic regression as my ML technique and TFIDF which we use in ML so it was the most difficult part and is as it is the core of my project",
+      " I did it by having a lot of data set of natural data set real time data set of different apps so I used around 5000 rows and I trained my model on the data set and I came up with the accuracy of around 92% which is so far great for the project as there are some conditions which can't be solved right now so we'll just get over them later",
+      " No, that's good enough and I don't think so that I have to move forward to increase in any 2% accuracy as it can be only increased when vendors and other people who are using UPI payment can really name their and categorize themselves into different categories. Like if someone is selling fruits and he should name his account like Ram fruit seller only then it can be solved otherwise 92% is pretty much good and is the best case out there in the market. Thank you.",
+      " no I don't think so they are much false positives I did train my data and I didn't found many false positives yeah it was great nothing as such far and problem",
+      " so it just you know they are it's a less percentage I think for 10 or 15 percent of the data is of new vendors so just categorizing them into miscellaneous and yeah that's on the issue that's something what my model does",
+      " now I trained my model in such a way that it categorizes them into miscellaneous",
+      " to use Burt's theorem and so that I can have much faster efficient ML model that's it",
+      " By making the model more efficient and trending the model on the data set already available in a much faster way as it uses some formulas which are better than the logistic regression.",
+      " 2.5%",
+      " no there's no such all fitting over the weather trend my data as my trend my model in system that it doesn't all fit the data set and it is efficient enough you know the sweet spot which is called India India minutes yeah it's fucking fine",
+      " since it's my project so I'll run it locally and if I get you know much finances and financially I get strong then I think I can deploy it over the internet and can be used by people around the globe",
+      " by buying out more efficient and better databases security and front-end development",
+      " yes first and deployed over the internet it is like 10 to 15 thousand rupees in India",
+      " no I don't have no plans to generate revenue from it",
+      " I am a full set developer and I just want to develop things so yeah that's my primary goal only"
+    ],
+    "evaluation": {
+      "score": 40,
+      "recommendation": "Pass",
+      "summary": "The candidate, Jyotirme Sharma, demonstrated some knowledge of full-stack development and machine learning, but lacked depth and clarity in their responses. Their project, FinCite, showed potential, but the candidate's approach to security, scalability, and revenue generation was inadequate. Overall, the candidate's performance was underwhelming, and significant improvement is needed to be considered a strong candidate.",
+      "strengths": [
+        "Some knowledge of full-stack development",
+        "Familiarity with machine learning concepts",
+        "Ability to work on a personal project"
+      ],
+      "weaknesses": [
+        "Lack of clarity and depth in responses",
+        "Inadequate approach to security and scalability",
+        "No clear plan for revenue generation",
+        "Limited knowledge of data breaches and prevention measures"
+      ],
+      "stages": [
+        {
+          "name": "Introduction",
+          "feedback": "The candidate's introduction was brief, but they failed to provide a clear and concise overview of their background and experience."
+        },
+        {
+          "name": "Project Discussion",
+          "feedback": "The candidate's discussion of their project, FinCite, showed some potential, but they struggled to provide detailed explanations of their approach to security, scalability, and revenue generation."
+        },
+        {
+          "name": "Technical Questions",
+          "feedback": "The candidate's responses to technical questions were often vague and lacking in depth, demonstrating a limited understanding of key concepts such as data breaches, security measures, and scalability."
+        }
+      ]
+    }
+  }
+]

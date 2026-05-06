@@ -1,0 +1,275 @@
+/* Replace all existing text chat CSS with new Voice layout */
+.mic-request-page, .loading-state {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.mic-request-content {
+  text-align: center;
+}
+
+.mic-request-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pill-btn {
+  margin-top: 24px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
+.pill-btn:hover {
+  opacity: 0.8;
+}
+
+.interview-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.dot.filled { background: white; }
+.dot.hollow { background: transparent; opacity: 0.3; }
+.dot.pulsing {
+  background: transparent;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(1); opacity: 0.5; background: transparent; }
+  50% { transform: scale(1.2); opacity: 1; background: white; }
+  100% { transform: scale(1); opacity: 0.5; background: transparent; }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.end-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.end-btn:hover {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+.center-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ORB SYSTEM */
+.orb-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.orb-core {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: radial-gradient(#1a1a2e, #07070a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+/* IDLE STATE */
+.orb-idle .orb-core {
+  animation: idlePulse 3s ease-in-out infinite;
+}
+
+@keyframes idlePulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.03); opacity: 1; box-shadow: 0 0 20px rgba(255,255,255,0.05); }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* LISTENING STATE */
+.orb-listening .orb-core {
+  border-color: #4a90d9;
+}
+
+.ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 144, 217, 0.5);
+  animation: ripple 1.5s ease-out infinite;
+  z-index: 1;
+}
+
+.ring-1 { animation-delay: 0s; }
+.ring-2 { animation-delay: 0.5s; }
+.ring-3 { animation-delay: 1.0s; }
+
+@keyframes ripple { 
+  0% { transform: scale(1); opacity: 0.6; } 
+  100% { transform: scale(2.2); opacity: 0; } 
+}
+
+/* THINKING STATE */
+.orb-thinking::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  z-index: 5;
+}
+
+.orb-thinking .orb-core {
+  background: radial-gradient(#2a2a3e, #07070a);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* SPEAKING STATE */
+.orb-speaking .orb-core {
+  box-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+
+.voice-bars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bar {
+  width: 4px;
+  background: white;
+  opacity: 0.8;
+  border-radius: 2px;
+  animation: voiceBar 0.5s ease-in-out infinite alternate;
+}
+
+.bar-1 { animation-delay: 0ms; }
+.bar-2 { animation-delay: 80ms; }
+.bar-3 { animation-delay: 160ms; }
+.bar-4 { animation-delay: 240ms; }
+.bar-5 { animation-delay: 320ms; }
+.bar-6 { animation-delay: 400ms; }
+.bar-7 { animation-delay: 480ms; }
+.bar-8 { animation-delay: 560ms; }
+
+@keyframes voiceBar {
+  0% { height: 4px; }
+  100% { height: 24px; }
+}
+
+/* STATUS LABEL */
+.status-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888894;
+  margin-bottom: 24px;
+  transition: opacity 300ms ease;
+}
+
+/* TRANSCRIPT STRIP */
+.transcript-strip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  max-width: 600px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transcript-line {
+  animation: fadeIn 400ms ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.transcript-line.agent {
+  color: #f0f0f0;
+}
+
+.transcript-line.candidate {
+  color: #888894;
+  font-style: italic;
+}
