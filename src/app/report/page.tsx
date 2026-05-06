@@ -102,7 +102,7 @@ export default function ReportPage() {
         <motion.div
           className="loading-spinner"
           animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" as const }}
         />
         <div className="loading-text font-ui">Analyzing Interview Transcript...</div>
       </div>
@@ -188,7 +188,7 @@ export default function ReportPage() {
                     className="bar-fill"
                     initial={{ width: 0 }}
                     animate={{ width: `${value}%` }}
-                    transition={{ delay: i * 0.15, duration: 1, ease: "easeOut" }}
+                    transition={{ delay: i * 0.15, duration: 1, ease: "easeOut" as const }}
                     style={{ backgroundColor: getScoreColor(value) }}
                   />
                 </div>

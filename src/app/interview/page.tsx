@@ -170,6 +170,8 @@ export default function InterviewPage() {
       setVoiceState('speaking');
 
       try {
+        console.log("[TTS FETCHING]", { textLength: text.length });
+        
         const res = await fetch('/api/tts', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -178,36 +180,69 @@ export default function InterviewPage() {
 
         const contentType = res.headers.get('content-type');
 
-        // CASE 1: Error Response (JSON)
+        if (!res.ok) {
+          let errorData = null;
+          try {
+            errorData = await res.json();
+          } catch {
+            errorData = await res.text();
+          }
+          const errObj = {
+            status: res.status,
+            statusText: res.statusText,
+            error: errorData
+          };
+          console.error("[TTS ERROR DETAIL]", JSON.stringify(errObj, null, 2));
+          throw new Error(`ElevenLabs failed with status ${res.status}`);
+        }
+
         if (contentType?.includes('application/json')) {
           const data = await res.json();
-          console.error("[TTS] ElevenLabs failed:", data);
-          resolve(); // Skip audio for this turn
-          return;
+          console.error("[TTS JSON ERROR]", data);
+          throw new Error("Invalid audio response");
         }
 
-        // CASE 2: ElevenLabs (Binary)
-        if (res.ok) {
-          const audioBuffer = await res.arrayBuffer();
-          const blob = new Blob([audioBuffer], { type: "audio/mpeg" });
-          const url = URL.createObjectURL(blob);
-          const audio = new Audio(url);
+        const buffer = await res.arrayBuffer();
+        if (!buffer || buffer.byteLength === 0) {
+          console.error("[TTS] Empty audio buffer");
+          throw new Error("Empty audio");
+        }
 
-          audio.onplay = () => startTranscriptStreaming(text);
-          audio.onended = () => {
-            URL.revokeObjectURL(url);
-            resolve();
-          };
-          audio.onerror = () => resolve();
+        const blob = new Blob([buffer], { type: "audio/mpeg" });
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
 
-          await audio.play();
-        } else {
+        audio.onplay = () => startTranscriptStreaming(text);
+        audio.onended = () => {
+          URL.revokeObjectURL(url);
           resolve();
-        }
+        };
+        audio.onerror = () => {
+          console.error("[TTS] Audio playback error");
+          resolve();
+        };
 
-      } catch (err) {
-        console.error('TTS/Playback error:', err);
-        resolve(); // Fail silently to avoid robotic voices
+        await audio.play();
+
+      } catch (error) {
+        console.warn("[TTS FALLBACK] Using browser speech:", error);
+        
+        try {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = 0.95;
+          utterance.pitch = 1.0;
+          utterance.lang = "en-IN"; // Professional Indian English accent if available
+
+          utterance.onstart = () => startTranscriptStreaming(text);
+          utterance.onend = () => resolve();
+          utterance.onerror = () => resolve();
+
+          window.speechSynthesis.cancel(); // Clear any pending speech
+          window.speechSynthesis.speak(utterance);
+        } catch (fallbackErr) {
+          console.error("[TTS] Fallback also failed:", fallbackErr);
+          resolve(); // Ensure interview continues even if all audio fails
+        }
       }
     });
   }, [startTranscriptStreaming]);
