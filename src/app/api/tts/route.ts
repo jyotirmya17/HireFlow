@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const PRIMARY_VOICE_ID = "A809T2V288pQ6N9B9mF0"; // Aarav (Indian English - Professional)
+const PRIMARY_VOICE_ID = process.env.ELEVENLABS_VOICE_ID || "txk8uOzZ0iCh0B9mFSRG"; 
 
 export async function POST(req: Request) {
   let text = "";
@@ -43,20 +43,16 @@ export async function POST(req: Request) {
     }
 
     const errorData = await response.json().catch(() => ({}));
-    console.warn("[TTS] ElevenLabs failed (quota or error), triggering browser fallback:", errorData);
+    console.error("[TTS] ElevenLabs failed:", errorData);
 
-    // Return JSON for fallback
+    // Return ERROR instead of fallback if STRICTLY requested
     return NextResponse.json({ 
-      fallback: true, 
-      text: text 
-    });
+      error: "ElevenLabs synthesis failed", 
+      details: errorData 
+    }, { status: 500 });
 
   } catch (err: any) {
     console.error('[TTS] Critical error:', err);
-    // Return JSON for fallback even on critical errors
-    return NextResponse.json({ 
-      fallback: true, 
-      text: text || "Hello... I am ready for the next part of our interview."
-    });
+    return NextResponse.json({ error: "TTS Critical Error" }, { status: 500 });
   }
 }

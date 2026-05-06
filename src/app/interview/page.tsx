@@ -178,24 +178,12 @@ export default function InterviewPage() {
 
         const contentType = res.headers.get('content-type');
 
-        // CASE 1: Fallback (JSON)
+        // CASE 1: Error Response (JSON)
         if (contentType?.includes('application/json')) {
           const data = await res.json();
-          if (data.fallback) {
-            console.log("[TTS] Using Browser SpeechSynthesis Fallback");
-            const utterance = new SpeechSynthesisUtterance(data.text);
-            utterance.rate = 0.95;
-            utterance.pitch = 1.0;
-            utterance.lang = "en-IN"; // Prefer Indian accent if available
-
-            utterance.onstart = () => startTranscriptStreaming(data.text);
-            utterance.onend = () => resolve();
-            utterance.onerror = () => resolve();
-
-            window.speechSynthesis.cancel(); // Clear queue
-            window.speechSynthesis.speak(utterance);
-            return;
-          }
+          console.error("[TTS] ElevenLabs failed:", data);
+          resolve(); // Skip audio for this turn
+          return;
         }
 
         // CASE 2: ElevenLabs (Binary)
@@ -219,11 +207,7 @@ export default function InterviewPage() {
 
       } catch (err) {
         console.error('TTS/Playback error:', err);
-        // Direct browser fallback if API call itself fails
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.onstart = () => startTranscriptStreaming(text);
-        utterance.onend = () => resolve();
-        window.speechSynthesis.speak(utterance);
+        resolve(); // Fail silently to avoid robotic voices
       }
     });
   }, [startTranscriptStreaming]);
