@@ -405,6 +405,13 @@ export default function InterviewPage() {
     }
   }, [playAudio, startRecording]);
 
+  const handleDoneSpeaking = useCallback(() => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
+      shouldListenRef.current = false;
+      mediaRecorderRef.current.stop();
+    }
+  }, []);
+
   const endInterview = useCallback(async () => {
     shouldListenRef.current = false;
     if (mediaRecorderRef.current?.state === 'recording') mediaRecorderRef.current.stop();
@@ -474,6 +481,18 @@ export default function InterviewPage() {
             {transcript}
           </div>
         </div>
+
+        {voiceState === 'listening' && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{ marginTop: '20px' }}
+          >
+            <button className="pill-btn font-ui" onClick={handleDoneSpeaking} style={{ background: '#3ecf8e', color: 'white' }}>
+              Done Speaking
+            </button>
+          </motion.div>
+        )}
 
         {!started && (
           <div style={{ marginTop: '20px' }}>

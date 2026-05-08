@@ -190,18 +190,36 @@
 
 /* Print Styles */
 @media print {
+  body {
+    background: white !important;
+  }
   .report-layout {
-    background-color: white;
+    background-color: white !important;
   }
   .report-header {
     border-bottom: 2px solid black;
+    padding: 10px 0;
   }
   .header-actions {
     display: none;
   }
-  .grid-card, .stage-card {
-    border: 1px solid #ccc;
-    box-shadow: none;
+  .report-content {
+    padding: 20px 0;
+    max-width: 100%;
+  }
+  .grid-card, .stage-card, .score-hero-card, .rec-hero-card {
+    border: 1px solid #eee !important;
+    box-shadow: none !important;
     break-inside: avoid;
+    background: white !important;
+  }
+  .score-value {
+    font-size: 64px !important;
+  }
+  .logo-text {
+    color: black !important;
+  }
+  button {
+    display: none !important;
   }
 }
